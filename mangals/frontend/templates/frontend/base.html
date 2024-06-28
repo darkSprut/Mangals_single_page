@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название сайта</title>
+    <link rel="stylesheet" href="{% static 'frontend/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/swiper-11.1.4/package/swiper-bundle.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'frontend/css/style.css' %}">
+    <script defer src="{% static 'frontend/swiper-11.1.4/package/swiper-bundle.min.js' %}"></script>
+    <script defer src="{% static 'frontend/scripts/swiper_init.js' %}"></script>
+</head>
+<body>
+    <div class="body" id="body">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
