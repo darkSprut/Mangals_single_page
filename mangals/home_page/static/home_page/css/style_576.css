@@ -1,0 +1,5 @@
+@media (min-width: 576px) {
+    :root {
+        --font-size-standart: 40px;
+    }
+}
