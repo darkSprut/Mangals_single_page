@@ -2,4 +2,28 @@
     :root {
         --font-size-standart: 40px;
     }
+
+    .swiper-card {
+
+        width: 72%;
+
+    }
+
 }
+
+@media (min-width: 700px) {
+    .swiper-card {
+
+        width: 68%;
+
+    }
+}
+
+@media (min-width: 850px) {
+    .swiper-card {
+
+        width: 58%;
+
+    }
+}
+

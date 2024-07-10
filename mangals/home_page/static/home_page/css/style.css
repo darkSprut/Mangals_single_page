@@ -1,61 +1,4 @@
-@font-face {
-    font-family: 'Muller';
-    src: local('MullerRegular'), 
-    url('../fonts/MullerRegular.woff') format('woff'),
-    url('../fonts/MullerRegular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Muller';
-    src: local('MullerMedium'), 
-    url('../fonts/MullerMedium.woff') format('woff'),
-    url('../fonts/MullerMedium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Muller';
-    src: local('MullerExtraBold'),
-    url('../fonts/MullerExtraBold.woff') format('woff'),
-    url('../fonts/MullerExtraBold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Muller';
-    src: local('MullerRegularItalic'), 
-    url('../fonts/MullerRegularItalic.woff') format('woff'),
-    url('../fonts/MullerRegularItalic.woff2') format('woff2');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-  }
 
-  @font-face {
-    font-family: 'Nexa';
-    src: local('Nexa'), 
-    url('../fonts/nexa-script-bold.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  
-  @font-face {
-    font-family: 'RussoOne';
-    src: local('RussoOne'), 
-    url('../fonts/russo-one.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
 
   @keyframes footer-roll-on--form {
     from {
@@ -102,6 +45,44 @@
     }
   }
 
+  @keyframes show_img--on {
+    from {
+        display: flex;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.45;
+
+    }
+
+    to {
+        display: flex;
+        opacity: 1;
+    }
+
+  }
+
+    @keyframes show_img--off {
+    from {
+        display: flex;
+        opacity: 1;
+    }
+
+    50% {
+        display: flex;
+        opacity: 0.45;
+
+    }
+
+    to {
+        display: none;
+        opacity: 0;
+
+    }
+
+    }
+
 
   @keyframes main-text-shadow {
     from {
@@ -137,6 +118,7 @@
     --btn-color-secondary: rgb(20, 12, 239);
     --btn-color-secondary-dark: rgb(22, 22, 110);
     --btn-color-secondary-lite: rgb(122, 122, 255);
+    --outline-focus-visible: rgba(44, 44, 249, 0.219);
   }
 
   * {
@@ -442,18 +424,81 @@
   border-radius: 5px;
 }
 
-.swiper {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.swiper-pagination {
-  bottom: -4px !important;
-}
-
 .catalog-list__item {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.btn-before {
+
+    outline: none
+
+}
+
+.card-price .btn-before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+}
+
+.card-price .btn-before:focus-visible {
+
+    outline: none;
+    outline: 10px solid var(--outline-focus-visible);
+    border-radius: 23px;
+}
+
+.card {
+
+    transform: none;
+    transition: transform 0.2s ease-in-out
+
+}
+
+.card:hover {
+    transform: scale(1.03, 1.03);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card-img-wrap {
+    box-sizing: content-box;
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    top: 15%;
+    bottom: 15%;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background-color: #000000;
+    z-index: 9999;
+    animation: show_img--off 0.3s ease-in-out forwards;
+}
+
+.card-img-wrap--on {
+    display: flex;
+    animation: show_img--on 0.3s ease-in-out forwards;
+}
+
+.card-img-wrap--X {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 35px;
+    height: 35px;
+    background: url("../img/X-white.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 999999999999999999999999999999999999;
+    cursor: pointer;
 }
 
 .card-title {
@@ -464,6 +509,13 @@
 .card-text {
   font-size: 0.5rem;
   color: gray;
+}
+
+.card-price {
+
+    color: var(--font-color);
+    font-size: 0.5rem;
+
 }
 
 .btn-primary {
@@ -523,7 +575,7 @@
 
 .footer-form input::placeholder {
   color: rgb(223, 225, 227);
-  font-size: 0.6rem;
+  font-size: 0.5rem;
 }
 
 .form-label {

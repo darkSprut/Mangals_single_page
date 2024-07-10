@@ -3,185 +3,182 @@
 {% block content %}
      <header class="header">
             <div class="container d-flex flex-row justify-content-between align-items-center">
-              <button class="burger" tabindex="0">
-                <span class="burger-span"></span>
-                <span class="burger-span"></span>
-                <span class="burger-span"></span>
-              </button>
-              <nav class="nav-m">
-                <ul class="nav-m-list">
-                  <li class="nav-m-list__item">
-                    <a class="link-simple" tabindex="0">
-                      Ссылка
-                    </a>
-                  </li>
-                  <li class="nav-m-list__item">
-                    <a class="link-simple" tabindex="0">
-                      Ссылка
-                    </a>
-                  </li>
-                  <li class="nav-m-list__item">
-                    <a class="link-simple" tabindex="0">
-                      Ссылка
-                    </a>
-                  </li>
-                  <li class="nav-m-list__item">
-                    <a class="link-simple" tabindex="0">
-                      Ссылка
-                    </a>
-                  </li>
-                  <li class="nav-m-list__item">
-                    <a class="link-simple" tabindex="0">
-                      Ссылка
-                    </a>
-                  </li>
-                  <li class="nav-m-list__item">
-                    <a class="link-simple" tabindex="0">
-                      Ссылка
-                    </a>
-                  </li>
-                  <li class="nav-m-list__item">
-                    <a class="link-simple" tabindex="0">
-                      Ссылка
-                    </a>
-                  </li>
-                  <li class="nav-m-list__item">
-                    <a class="link-simple" tabindex="0">
-                      Ссылка
-                    </a>
-                  </li>
-                </ul>
-                <button class="X" tabindex="0">
+                <button class="burger" tabindex="0">
+                    <span class="burger-span"></span>
+                    <span class="burger-span"></span>
+                    <span class="burger-span"></span>
                 </button>
-              </nav>
-              <a class="btn-m" href="#footer-form">
-                Связаться с нами
-              </a>
+                <nav class="nav-m">
+                    <ul class="nav-m-list">
+                        <li class="nav-m-list__item">
+                            <a class="link-simple" tabindex="0">
+                              Ссылка
+                            </a>
+                        </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                          </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                          </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                          </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                          </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                          </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                          </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                        </li>
+                    </ul>
+                    <button class="X" tabindex="0">
+                    </button>
+                </nav>
+                <a class="btn-m" href="#footer-form">
+                  Связаться с нами
+                </a>
             </div>
-        </header>
-        <main class="main">
-            <section class="section hero">
-              <div class="container">
-                <div class="hero-content">
-                  {% if data.site_name %}
-                  <h1 class="main_title">
-                    {{ data.site_name }}
-                  </h1>
-                  {% else %}
-                  <h1 class="main_title">
-                    Название сайта
-                  </h1>
-                  {% endif %}
-                </div>
-              </div>
-            </section>
-            <section class="section">
-                <div class="container">
-                    <h2 class="title">
-                        Примеры работ
-                    </h2>
-                    <div class="swiper col-lg-6 col-md-8">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                          <!-- Slides -->
-                          <div class="swiper-slide">
-                            <img class="example-img" src="{% static 'home_page/img/1663746686_49-mykaleidoscope-ru-p-yeda-na-mangale-yeda-instagram-57.jpg' %}" alt="мангал">
-                          </div>
-                          <div class="swiper-slide">
-                            <img class="example-img" src="{% static 'home_page/img/1681139690_sneg-top-p-mangal-kartinki-pinterest-52.jpg' %}" alt="мангал">
-                          </div>
-                          <div class="swiper-slide">
-                            <img class="example-img" src="{% static 'home_page/img/38d01526a4519ab4f491e1577af0fc98.jpeg' %}" alt="мангал">
-                          </div>
-                          <div class="swiper-slide">
-                            <img class="example-img" src="{% static 'home_page/img/090_kovaniy_mangal_utyug.jpg' %}" alt="мангал">
-                          </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                        <!-- <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div> -->
-                        <!-- <div class="swiper-scrollbar"></div> -->
-                      </div>
-                </div>
-            </section>
-            <section class="section">
-              <div class="container">
-                <h2 class="title">
-                  Каталог
-                </h2>
-                <ul class="catalog-list row">
-                  <li class="catalog-list__item col col-sm-10 col-lg-6">
-                    <article>
-                      <div class="card">
-                        <img src="{% static 'home_page/img/090_kovaniy_mangal_utyug.jpg' %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h3 class="card-title">Название</h3>
-                          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo laborum
-                             vero voluptate minus eveniet ipsum reprehenderit, rem ratione est consectetur eos asperiores
-                             doloremque nobis? Totam vero quis repellat maxime molestiae.
-                          </p>
-                          <a href="#" class="btn-primary btn-m">цена</a>
-                        </div>
-                      </div>
-                    </article>
-                  </li>
-                  <li class="catalog-list__item col-12 col-sm-10 col-lg-6">
-                    <article>
-                      <div class="card">
-                        <img src="{% static 'home_page/img/090_kovaniy_mangal_utyug.jpg' %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h3 class="card-title">Название</h3>
-                          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo laborum
-                             vero voluptate minus eveniet ipsum reprehenderit, rem ratione est consectetur eos asperiores
-                             doloremque nobis? Totam vero quis repellat maxime molestiae.
-                          </p>
-                          <a href="#" class="btn-primary btn-m">цена</a>
-                        </div>
-                      </div>
-                    </article>
-                  </li>
-                </ul>
-              </div>
-            </section>
-            <!-- <section class="section">
-
-            </section> -->
-        </main>
-        <footer class="footer">
+     </header>
+    <main class="main">
+        <section class="section hero">
           <div class="container">
-            <!-- <ul class="footer-list row row-cols-auto">
-              <li class="footer-list__item col">
-                <a class="footer-list__link btn-m" href="#contacts" data-footerbutton="1">Контакты</a>
-              </li>
-              <li class="footer-list__item col">
-                <a class="footer-list__link btn-m" href="#footer-form" data-footerbutton="2">Оставить заявку</a>
-              </li>
-            </ul> -->
-            <div class="footer-cont d-flex flex-column align-items-center justify-content-center">
-              <ul class="footer-cont-list d-flex flex-column align-items-start justify-content-center footer-view--tel col-md-8" data-cont="1" id="contacts">
-                <li class="footer-cont-list__item ">
-                  <h3 class="title-cont">
-                    Телефон
-                  </h3>
-                  <a class="footer-cont-list__link btn-tel" href="tel:{{ data.tel }}">{{ data.tel }}</a>
-                </li>
-              </ul>
-              <form class="footer-form col-sm-12 col-md-8" data-cont="2" id="footer-form">
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label">Email</label>
-                  <input type="email" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="name@example.com">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label">Телефон для связи с вами</label>
-                  <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="+79998887766">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label">Сообщение</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn-m" tabindex="0">Отправить</button>
-              </form>
+            <div class="hero-content">
+              {% if data.site_name %}
+              <h1 class="main_title">
+                {{ data.site_name }}
+              </h1>
+              {% else %}
+              <h1 class="main_title">
+                Название сайта
+              </h1>
+              {% endif %}
             </div>
           </div>
-        </footer>
+        </section>
+        {% if example_work %}
+        <section class="section">
+            <div class="container">
+                <h2 class="title">
+                    Примеры работ
+                </h2>
+                <div class="swiper swiper-container swiper-hero col-lg-6 col-md-8">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                      {% for img in example_work %}
+                      <!-- Slides -->
+                      <div class="swiper-slide">
+                        <img class="example-img" src="{{ img.image.url }}" alt="{{ img.alt }}">
+                      </div>
+                      {% endfor %}
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-hero"></div>
+                    <div class="swiper-button-prev swiper-button-prev-hero" tabindex="0"></div>
+                    <div class="swiper-button-next swiper-button-next-hero" tabindex="0"></div>
+                    <!-- <div class="swiper-scrollbar"></div> -->
+                  </div>
+            </div>
+        </section>
+        {% endif %}
+        {% if products %}
+        <section class="section">
+          <div class="container">
+            <h2 class="title">
+              Каталог
+            </h2>
+            <ul class="catalog-list row">
+            {% for product in products %}
+              <li class="catalog-list__item col col-sm-10 col-lg-6">
+                <article class="card-article">
+                    <div class="card-img-wrap">
+                        <div class="swiper swiper-container swiper-card col-lg-6 col-md-8">
+                        <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper swiper-wrapper-card">
+                              {% for img in product.images.all %}
+                              <!-- Slides -->
+                              <div class="swiper-slide swiper-slide-card">
+                                    <img class="swiper-card-img" src="{{ img.image.url }}" alt="{{ img.alt }}">
+                              </div>
+                              {% endfor %}
+                            </div>
+                            <div class="swiper-pagination swiper-pagination-card"></div>
+                            <div class="swiper-button-prev swiper-button-prev-card" tabindex="0"></div>
+                            <div class="swiper-button-next swiper-button-next-card" tabindex="0"></div>
+                        <!-- <div class="swiper-scrollbar-card"></div> -->
+                        </div>
+                        <button class="card-img-wrap--X" tabindex="0">
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img src="{{ product.main_image.image.url }}" class="card-img-top" alt="{{ product.main_image.alt}}">
+                        <div class="card-body">
+                          <h3 class="card-title">{{ product.title }}</h3>
+                          <p class="card-text">
+                            {{ product.text }}
+                          </p>
+                        <p class="card-price" tabindex="-1">
+                            <button class="btn-before" tabindex="0"></button>
+                            {{ product.price }} ₽
+                        </p>
+                        </div>
+                    </div>
+                </article>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </section>
+        {% endif %}
+        <!-- <section class="section">
+
+        </section> -->
+    </main>
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer-cont d-flex flex-column align-items-center justify-content-center">
+          <ul class="footer-cont-list d-flex flex-column align-items-start justify-content-center footer-view--tel col-12 col-md-8" data-cont="1" id="contacts">
+            <li class="footer-cont-list__item ">
+              <h3 class="title-cont">
+                Телефон
+              </h3>
+              <a class="footer-cont-list__link btn-tel" href="tel:{{ data.tel }}">{{ data.tel }}</a>
+            </li>
+          </ul>
+          <form class="footer-form col-12 col-sm-12 col-md-8" id="footer-form" method="post" action="#" @submit.prevent="submitMessage">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Email</label>
+              <input type="email" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="name@example.com" v-model="email">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput2" class="form-label">Телефон для связи с вами</label>
+              <input type="number" class="form-control form-control-sm" id="exampleFormControlInput2" placeholder="+79998887766" v-model="tel">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Сообщение</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="message"></textarea>
+            </div>
+            <button type="submit" class="btn-m" tabindex="0">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </footer>
 {% endblock %}

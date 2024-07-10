@@ -34,6 +34,11 @@
         height: 350px;
     }
 
+    .hero-content {
+        min-height: 400px;
+    }
+
+
     .card-title {
         font-size: 0.4rem;
     }
@@ -42,11 +47,30 @@
     font-size: 0.3rem;
     }
 
+    .card-img-wrap--X {
+
+        right: 20px;
+
+    }
+
+
     .btn-m {
-    font-size: 0.4rem;
+        font-size: 0.3rem;
     }
 
     .link-simple {
         font-size: 0.4rem;
+    }
+
+    .form-label {
+        font-size: 0.4rem;
+    }
+}
+
+@media (min-width: 1154px) {
+    .swiper-card {
+
+        width: 40%;
+
     }
 }
