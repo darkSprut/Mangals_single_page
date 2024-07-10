@@ -1,8 +1,6 @@
-import datetime
-
 from django.db import models
-from django.core.validators import ValidationError
-from datetime import datetime as dt
+from .utils import *
+from django.core.validators import MinLengthValidator, EmailValidator, MaxLengthValidator, RegexValidator
 # Create your models here.
 
 
@@ -22,36 +20,6 @@ class Data(models.Model):
         if instance.exists():
             instance.delete()
         super().clean()
-
-
-def example_work_upload(instance, filename):
-    now = dt.now()
-    return 'examples/{Y}/{m}/{d}/{filename}'.format(
-        Y=now.strftime("%Y"),
-        m=now.strftime("%m"),
-        d=now.strftime("%d"),
-        filename=filename,
-    )
-
-
-def main_img_product_upload(instance, filename):
-    now = dt.now()
-    return 'product/main_img/{Y}/{m}/{d}/{filename}'.format(
-        Y=now.strftime("%Y"),
-        m=now.strftime("%m"),
-        d=now.strftime("%d"),
-        filename=filename,
-    )
-
-
-def img_product_upload(instance, filename):
-    now = dt.now()
-    return 'product/img/{Y}/{m}/{d}/{filename}'.format(
-        Y=now.strftime("%Y"),
-        m=now.strftime("%m"),
-        d=now.strftime("%d"),
-        filename=filename,
-    )
 
 
 class ExamplesOfWorks(models.Model):
@@ -99,4 +67,16 @@ class Product(models.Model):
         ordering = ["-created_at"]
 
 
-
+class Message(models.Model):
+    name = models.CharField(max_length=50, validators=[
+        MinLengthValidator(limit_value=2, message="Длина имени не может быть меньше двух знаков")
+    ])
+    email = models.EmailField(validators=[
+        EmailValidator(message="Недопустимое значение для email")
+    ])
+    tel = models.TextField(validators=[
+        RegexValidator(regex='/+7\d{10}/', message="Недопустимое значение для телефона")
+    ])
+    message = models.TextField(validators=[
+        MinLengthValidator(limit_value=10, message="Сообщение слишком короткое")
+    ])

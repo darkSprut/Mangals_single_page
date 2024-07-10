@@ -5,6 +5,8 @@ from django.http import HttpResponse, HttpRequest
 from rest_framework.views import APIView
 from rest_framework.request import Request
 from rest_framework.response import Response
+from rest_framework import status
+from .serializers import MessageSerializer
 
 # Create your views here.
 
@@ -24,5 +26,15 @@ class MessagesView(APIView):
 
     def post(self, request: Request) -> Response:
         print(request.data)
-        return Response()
+        serializer = MessageSerializer(data=request.data)
+        if serializer.is_valid():
+            return Response()
+        else:
+            error_dict = {"errors": {}}
+            for key in serializer.errors.keys():
+                error_dict["errors"][key] = serializer.errors.get(key)[0].title()
+
+            return Response(error_dict)
+
+
 

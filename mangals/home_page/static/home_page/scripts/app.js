@@ -2,12 +2,14 @@ const app = Vue.createApp(
     {
         methods: {
             submitMessage() {
-                fetch('submit/', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json;charset=utf-8', 'X-CSRFToken': this.getCookie('csrftoken') },
-                    body: JSON.stringify(this.data),
-                }      
-            )
+
+                axios.defaults.headers.common['X-CSRFToken'] = this.getCookie('csrftoken');
+                axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+
+                axios.post('submit/',  JSON.stringify({...this})      
+            ).then((resp) => {
+                console.log(resp.data)
+            })
             },
 
             getCookie(key) {
@@ -23,29 +25,22 @@ const app = Vue.createApp(
                     cookies_data[result.groups.key] = result.groups.val;
 
                 }
-                return cookies_data[key];
+                return cookies_data[key] ? cookies_data[key] : console.warn(`there are no values with this key: ${key}`);
             }
         },
 
         mounted() {
-            this.getCookie();
+
         },
 
         data() {
             return {
-                data: {
-                    email: '',
-                    tel: '',
-                    message: '',
-                }
- 
+                name: '',
+                email: '',
+                tel: '',
+                message: '', 
             }
         }
 
     }
 ).mount("#footer");
-
-
-// app.config.errorHandler = function (err) {
-
-// }

@@ -160,21 +160,25 @@
               <h3 class="title-cont">
                 Телефон
               </h3>
-              <a class="footer-cont-list__link btn-tel" href="tel:{{ data.tel }}">{{ data.tel }}</a>
+              <a class="footer-cont-list__link btn-tel" href="tel:+{{ data.tel }}">{{ data.tel }}</a>
             </li>
           </ul>
           <form class="footer-form col-12 col-sm-12 col-md-8" id="footer-form" method="post" action="#" @submit.prevent="submitMessage">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email</label>
-              <input type="email" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="name@example.com" v-model="email">
+              <label for="exampleFormControlInput1" class="form-label">Как к Вам обращаться</label>
+              <input type="text" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="name" v-model="name" required>
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlInput2" class="form-label">Телефон для связи с вами</label>
-              <input type="number" class="form-control form-control-sm" id="exampleFormControlInput2" placeholder="+79998887766" v-model="tel">
+              <label for="exampleFormControlInput2" class="form-label">Email</label>
+              <input type="email" class="form-control form-control-sm" id="exampleFormControlInput2" placeholder="name@example.com" v-model="email">
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">Сообщение</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="message"></textarea>
+              <label for="exampleFormControlInput3" class="form-label">Телефон для связи с вами</label>
+              <input type="text" class="form-control form-control-sm" id="exampleFormControlInput3" v-model="tel" required>
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea4" class="form-label">Сообщение</label>
+              <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" v-model="message" required></textarea>
             </div>
             <button type="submit" class="btn-m" tabindex="0">Отправить</button>
           </form>
