@@ -1,9 +1,15 @@
 from django.contrib import admin
-from .models import Data, ExamplesOfWorks, Product, MainImgProduct, ImgProduct
+from .models import Data, ExamplesOfWorks, Product, MainImgProduct, ImgProduct, Message
 import gettext
 
 
 # Register your models here.
+@admin.register(Message)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ["pk", "tel", "name", "message", "created_at"]
+    list_display_links = ["pk", "tel"]
+
+
 @admin.register(Data)
 class DataAdmin(admin.ModelAdmin):
     list_display = ["pk", "site_name", "tel"]

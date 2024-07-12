@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import MessageSerializer
+from .serializers import MessageSerializer, ErrorsSerializer
 
 # Create your views here.
 
@@ -25,16 +25,14 @@ class IndexView(TemplateView):
 class MessagesView(APIView):
 
     def post(self, request: Request) -> Response:
-        print(request.data)
         serializer = MessageSerializer(data=request.data)
         if serializer.is_valid():
+            instance = serializer.create(serializer.validated_data)
+            instance.save()
             return Response()
         else:
-            error_dict = {"errors": {}}
-            for key in serializer.errors.keys():
-                error_dict["errors"][key] = serializer.errors.get(key)[0].title()
-
-            return Response(error_dict)
+            serialize_errors_data = ErrorsSerializer(serializer.errors).data()
+            return Response(data=serialize_errors_data)
 
 
 

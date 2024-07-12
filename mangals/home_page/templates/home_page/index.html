@@ -166,21 +166,36 @@
           <form class="footer-form col-12 col-sm-12 col-md-8" id="footer-form" method="post" action="#" @submit.prevent="submitMessage">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Как к Вам обращаться</label>
+              <p class="form-err" v-if="name_err">
+                ${ name_err }$
+              </p>
               <input type="text" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="name" v-model="name" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput2" class="form-label">Email</label>
+              <p class="form-err" v-if="email_err">
+                ${ email_err }$
+              </p>
               <input type="email" class="form-control form-control-sm" id="exampleFormControlInput2" placeholder="name@example.com" v-model="email">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput3" class="form-label">Телефон для связи с вами</label>
-              <input type="text" class="form-control form-control-sm" id="exampleFormControlInput3" v-model="tel" required>
+              <p class="form-err" v-if="tel_err">
+                ${ tel_err }$
+              </p>
+              <input type="text" class="form-control form-control-sm" id="exampleFormControlInput3" v-model="tel" required placeholder="+7 999 999 99 99">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlTextarea4" class="form-label">Сообщение</label>
+              <p class="form-err" v-if="message_err">
+                ${ message_err }$
+              </p>
               <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" v-model="message" required></textarea>
             </div>
             <button type="submit" class="btn-m" tabindex="0">Отправить</button>
+            <span v-if="posted" class="btn-m btn-coplite">
+              Oтправлено
+            </span>
           </form>
         </div>
       </div>

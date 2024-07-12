@@ -113,6 +113,7 @@
     --font-size-standart: 38px;
     --border-radius: 10px;
     --btn-color: #5e7bb0;
+    --color-complite: rgb(15, 197, 15);
     --btn-color-hover: #88a7e1;
     --btn-color-active: #475d87;
     --btn-color-secondary: rgb(20, 12, 239);
@@ -140,6 +141,11 @@
   a {
     text-decoration: none;
     cursor: pointer;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
   }
 
   ul {
@@ -387,6 +393,13 @@
     filter: drop-shadow(2px 2px 2px var(--btn-color-active));
 }
 
+.btn-coplite {
+  padding: 8px 15px;
+  background: linear-gradient(150deg, white 1%, 18%, transparent 80%);
+  background-color: var(--color-complite);
+  filter: drop-shadow(2px 2px 2px var(--color-complite));
+  margin-left: 5px;
+}
 .btn-tel {
   padding: 8px 15px;
   background: linear-gradient(150deg, white 1%, 18%, transparent 80%);
@@ -585,4 +598,13 @@
 .form-control, .form-control:focus-visible {
   font-size: 0.5rem;
   color: var(--font-color);
+}
+
+.form-err {
+  font-size: 0.3rem;
+  padding: 7px;
+  border-radius: 20px;
+  background-color: white;
+  color: rgb(235, 71, 71);
+  margin-bottom: 5px;
 }

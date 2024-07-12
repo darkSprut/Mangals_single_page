@@ -1,6 +1,8 @@
 from django.db import models
 from .utils import *
-from django.core.validators import MinLengthValidator, EmailValidator, MaxLengthValidator, RegexValidator
+from django.core.validators import (MinLengthValidator, EmailValidator,
+                                    MaxLengthValidator, RegexValidator)
+from .validators import tel_ru_validator
 # Create your models here.
 
 
@@ -75,8 +77,15 @@ class Message(models.Model):
         EmailValidator(message="Недопустимое значение для email")
     ])
     tel = models.TextField(validators=[
-        RegexValidator(regex='/+7\d{10}/', message="Недопустимое значение для телефона")
+        RegexValidator(regex=r'\+7\d{10}', message="Недопустимое значение для телефона, формат +7 999 999 99 99")
     ])
     message = models.TextField(validators=[
-        MinLengthValidator(limit_value=10, message="Сообщение слишком короткое")
+        MinLengthValidator(limit_value=10, message="Сообщение меньше 10 знаков")
     ])
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Сообщение'
+        verbose_name_plural = 'Сообщения'
+        ordering = ["-created_at"]
+
