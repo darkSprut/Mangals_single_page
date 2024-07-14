@@ -160,10 +160,10 @@
               <h3 class="title-cont">
                 Телефон
               </h3>
-              <a class="footer-cont-list__link btn-tel" href="tel:+{{ data.tel }}">{{ data.tel }}</a>
+              <a class="footer-cont-list__link btn-tel" href="tel:+{{ data.tel }}">+{{ data.tel }}</a>
             </li>
           </ul>
-          <form class="footer-form col-12 col-sm-12 col-md-8" id="footer-form" method="post" action="#" @submit.prevent="submitMessage">
+          <form class="footer-form col-12 col-sm-12 col-md-8" id="footer-form" method="post" action="#" @submit.prevent="submitMessage" autocomplete="off">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Как к Вам обращаться</label>
               <p class="form-err" v-if="name_err">
@@ -183,7 +183,7 @@
               <p class="form-err" v-if="tel_err">
                 ${ tel_err }$
               </p>
-              <input type="text" class="form-control form-control-sm" id="exampleFormControlInput3" v-model="tel" required placeholder="+7 999 999 99 99">
+              <input type="text" class="form-control form-control-sm" id="exampleFormControlInput3" v-model="tel" required autocomplete="off" data-mask="+7 999 999 99 99" data-mask-clearifnotmatch="true">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlTextarea4" class="form-label">Сообщение</label>
@@ -192,10 +192,17 @@
               </p>
               <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" v-model="message" required></textarea>
             </div>
-            <button type="submit" class="btn-m" tabindex="0">Отправить</button>
-            <span v-if="posted" class="btn-m btn-coplite">
-              Oтправлено
-            </span>
+            <div class="timer-wrapper">
+              <button v-if="!posted" type="submit" class="btn-m" tabindex="0">Отправить</button>
+              <a v-if="posted"class="btn-m"> Следующее сообщение через: ${ timer_actual }$s</a>
+            </div>
+            <div v-if="show_envelope" class="form-complite">
+              <div class="form-complite-envelope">
+              </div>
+              <p class="form-complite-text">
+                Отправлено!
+              </p>
+            </div>
           </form>
         </div>
       </div>

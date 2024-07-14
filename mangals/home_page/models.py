@@ -77,7 +77,7 @@ class Message(models.Model):
         EmailValidator(message="Недопустимое значение для email")
     ])
     tel = models.TextField(validators=[
-        RegexValidator(regex=r'\+7\d{10}', message="Недопустимое значение для телефона, формат +7 999 999 99 99")
+        RegexValidator(regex=r'\+7 \d{3} \d{3} \d{2} \d{2}', message="Недопустимое значение для телефона, формат +7 999 999 99 99")
     ])
     message = models.TextField(validators=[
         MinLengthValidator(limit_value=10, message="Сообщение меньше 10 знаков")
@@ -88,4 +88,7 @@ class Message(models.Model):
         verbose_name = 'Сообщение'
         verbose_name_plural = 'Сообщения'
         ordering = ["-created_at"]
+
+    def __str__(self):
+        return f'Сообщение №{self.pk}'
 

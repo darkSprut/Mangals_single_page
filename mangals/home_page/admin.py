@@ -8,6 +8,7 @@ import gettext
 class MessageAdmin(admin.ModelAdmin):
     list_display = ["pk", "tel", "name", "message", "created_at"]
     list_display_links = ["pk", "tel"]
+    readonly_fields = ["name", "tel", "email", "message", "created_at"]
 
 
 @admin.register(Data)

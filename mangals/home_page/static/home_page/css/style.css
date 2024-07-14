@@ -106,6 +106,59 @@
     }
   }
 
+  @keyframes show_envelop {
+
+    from {
+      display: flex;
+      opacity: 0;
+      top: 10%;
+    }
+
+    30% {
+      opacity: 1;
+      top: 40%
+    }
+
+    40% {
+      opacity: 1;
+      top: 22%;
+    }
+
+    50% {
+      opacity: 1;
+      top: 32%;
+    }
+
+    60% {
+      opacity: 1;
+      top: 22%
+    }
+
+    70% {
+      opacity: 1;
+      top: 22%
+
+    }
+
+    80% {
+      opacity: 0.7;
+      top: 22%
+
+    }
+
+    90% {
+      opacity: 0.5;
+      top: 22%
+    }
+
+    to {
+      top: 22%;
+      opacity: 0;
+      display: none;
+    }
+
+  }
+
   :root {
     --font-color: #5e7bb0;
     --font-color-dark: #475d87;
@@ -393,13 +446,6 @@
     filter: drop-shadow(2px 2px 2px var(--btn-color-active));
 }
 
-.btn-coplite {
-  padding: 8px 15px;
-  background: linear-gradient(150deg, white 1%, 18%, transparent 80%);
-  background-color: var(--color-complite);
-  filter: drop-shadow(2px 2px 2px var(--color-complite));
-  margin-left: 5px;
-}
 .btn-tel {
   padding: 8px 15px;
   background: linear-gradient(150deg, white 1%, 18%, transparent 80%);
@@ -607,4 +653,31 @@
   background-color: white;
   color: rgb(235, 71, 71);
   margin-bottom: 5px;
+}
+
+.form-complite {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 22%;
+  left: 30%;
+  right: 30%;
+  height: max-content;
+  z-index: 9999;
+  animation: show_envelop 2s ease-in-out forwards;
+}
+
+.form-complite-envelope {
+  width: 222px;
+  height: 222px;
+  background-image: url("../img/envelope.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.form-complite-text {
+  font-size: 0.5rem;
+  color: #98ff41;
 }

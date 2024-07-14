@@ -82,6 +82,12 @@ DATABASES = {
     }
 }
 
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'accountkazakov'
+EMAIL_HOST_PASSWORD = 'bmeacbjitsbifokk'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
