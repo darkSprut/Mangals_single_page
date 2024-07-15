@@ -20,10 +20,10 @@ element.addEventListener('keydown', function(event) {
     if (element.value == '+7 ' && event.code == 'Backspace') {
         event.preventDefault()
     } 
-    // if (element.value == '') {
-    //     event.preventDefault()
-    //     element.value += '+7 '
-    // }
+    if (element.value == '') {
+        event.preventDefault()
+        element.value += '+7 '
+    }
 
     if (element.value.length >= 16 && event.code != 'Backspace') {
             event.preventDefault()

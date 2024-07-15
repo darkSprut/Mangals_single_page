@@ -99,26 +99,22 @@
             </div>
         </section>
         {% endif %}
-        {% if products %}
-        <section class="section">
+        <section v-if="products" class="section">
           <div class="container">
             <h2 class="title">
               Каталог
             </h2>
-            <ul class="catalog-list row">
-            {% for product in products %}
+            <ul v-for="product in products" class="catalog-list row">
               <li class="catalog-list__item col col-sm-10 col-lg-6">
                 <article class="card-article">
                     <div class="card-img-wrap">
                         <div class="swiper swiper-container swiper-card col-lg-6 col-md-8">
                         <!-- Additional required wrapper -->
                             <div class="swiper-wrapper swiper-wrapper-card">
-                              {% for img in product.images.all %}
                               <!-- Slides -->
-                              <div class="swiper-slide swiper-slide-card">
-                                    <img class="swiper-card-img" src="{{ img.image.url }}" alt="{{ img.alt }}">
+                              <div v-for="img in product.images" class="swiper-slide swiper-slide-card">
+                                <img class="swiper-card-img" :src="img.image" :alt="img.alt">
                               </div>
-                              {% endfor %}
                             </div>
                             <div class="swiper-pagination swiper-pagination-card"></div>
                             <div class="swiper-button-prev swiper-button-prev-card" tabindex="0"></div>
@@ -129,25 +125,23 @@
                         </button>
                     </div>
                     <div class="card">
-                        <img src="{{ product.main_image.image.url }}" class="card-img-top" alt="{{ product.main_image.alt}}">
+                        <img :src="product.main_image.image" class="card-img-top" :alt="product.main_image.alt">
                         <div class="card-body">
-                          <h3 class="card-title">{{ product.title }}</h3>
+                          <h3 class="card-title">${ product.title }$</h3>
                           <p class="card-text">
-                            {{ product.text }}
+                            ${ product.text }$
                           </p>
                         <p class="card-price" tabindex="-1">
                             <button class="btn-before" tabindex="0"></button>
-                            {{ product.price }} ₽
+                            ${ product.price }$ ₽
                         </p>
                         </div>
                     </div>
                 </article>
               </li>
-              {% endfor %}
             </ul>
           </div>
         </section>
-        {% endif %}
         <!-- <section class="section">
 
         </section> -->
@@ -196,14 +190,19 @@
               <button v-if="!posted" type="submit" class="btn-m" tabindex="0">Отправить</button>
               <a v-if="posted"class="btn-m"> Следующее сообщение через: ${ timer_actual }$s</a>
             </div>
-            <div v-if="show_envelope" class="form-complite">
-              <div class="form-complite-envelope">
-              </div>
-              <p class="form-complite-text">
-                Отправлено!
-              </p>
-            </div>
           </form>
+          <div v-if="show_envelope" class="form-complite">
+            <div class="form-complite-envelope">
+            </div>
+            <p class="form-complite-text">
+              Отправлено!
+            </p>
+          </div>
+          <ul v-if="waiting_response" class="waiting_response">
+            <li class="waiting_response__span"></li>
+            <li class="waiting_response__span"></li>
+            <li class="waiting_response__span"></li>
+          </ul>
         </div>
       </div>
     </footer>

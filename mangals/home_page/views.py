@@ -3,7 +3,8 @@ from .models import Data, ExamplesOfWorks, Product
 from rest_framework.views import APIView
 from rest_framework.request import Request
 from rest_framework.response import Response
-from .serializers import MessageSerializer, ErrorsSerializer
+from rest_framework.generics import GenericAPIView, ListAPIView
+from .serializers import MessageSerializer, ErrorsSerializer, ProductSerializer
 from django.core.mail import send_mail
 from .utils import bild_message
 # Create your views here.
@@ -18,6 +19,11 @@ class IndexView(TemplateView):
         context["example_work"] = ExamplesOfWorks.objects.all()
         context["products"] = Product.objects.filter(available=True).select_related("main_image").prefetch_related("images")
         return context
+
+
+class ProductsView(ListAPIView):
+    queryset = Product.objects.filter(available=True).select_related("main_image").prefetch_related("images")
+    serializer_class = ProductSerializer
 
 
 class MessagesView(APIView):

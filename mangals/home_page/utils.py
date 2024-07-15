@@ -1,5 +1,4 @@
 from datetime import datetime as dt
-from rest_framework.serializers import Serializer
 
 
 def example_work_upload(instance, filename):
@@ -35,6 +34,7 @@ def img_product_upload(instance, filename):
 def bild_message(data: dict) -> str:
     message = ''
     for key, val in data.items():
-        message += (f'<div style="width: 100%; background-color: #008080; '
-                    f'color: #F5FFFA; padding: 7px; font-size: 25px;">{key}: {val}</div>')
+        message += (f'<p style="width: 100%; background-color: #008080; '
+                    f'color: #F5FFFA; padding: 7px; '
+                    f'font-size: 25px; margin-bottom: 2px;">{key}: {val}</p>')
     return message

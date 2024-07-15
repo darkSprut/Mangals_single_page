@@ -5,11 +5,11 @@ const app = Vue.createApp(
             submitMessage: function() {
                 axios.defaults.headers.common['X-CSRFToken'] = this.getCookie('csrftoken');
                 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
-
+                this.waiting_response = true
                 axios.post('submit/',  JSON.stringify({...this})
-
                 ).then(response => {
                     if (!response.data.errors) {
+                        this.waiting_response = false
                         this.name = ''
                         this.email = ''
                         this.tel = ''
@@ -23,6 +23,7 @@ const app = Vue.createApp(
                         this.timer_actual = this.timer_default
                         this.startTimer()
                     } else {
+                        this.waiting_response = false
                         this.name_err = response.data.errors.name ? response.data.errors.name.toLowerCase() : null;
                         this.email_err = response.data.errors.email ? response.data.errors.email.toLowerCase() : null;
                         this.tel_err = response.data.errors.tel ? response.data.errors.tel.toLowerCase() : null;
@@ -33,6 +34,17 @@ const app = Vue.createApp(
                 })                      
 
             },
+            getProducts: function() {
+                axios.defaults.headers.common['X-CSRFToken'] = this.getCookie('csrftoken');
+                axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+                this.waiting_response = true
+                axios.get('products/',  JSON.stringify({...this})
+            ).then(response =>{
+                this.waiting_response = false
+                this.products = response.data
+            })
+            },
+
             startTimer: function () {
                 setInterval(() => {
                     if (this.timer_actual > 0) {
@@ -88,17 +100,21 @@ const app = Vue.createApp(
                 email_err: null,
                 tel_err: null,
                 message_err: null,
+                products: null,
                 posted: false,
                 timer_default: 30,
                 timer_actual: null,
                 show_envelope: false,
+                waiting_response: false,
             }
         },
 
         mounted() {
             this.abilityToSend()
+            this.getProducts()
+
         },
 
 
     }
-).mount("#footer");
+).mount("#body");

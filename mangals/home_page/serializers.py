@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Message
+from .models import Message, Product, ImgProduct, MainImgProduct
 
 
 class MessageSerializer(ModelSerializer):
@@ -11,6 +11,29 @@ class MessageSerializer(ModelSerializer):
     def create(self, validated_data):
         instance = Message(**validated_data)
         return instance
+
+
+class MainImgProductSerializer(ModelSerializer):
+
+    class Meta:
+        model = MainImgProduct
+        fields = 'image', 'alt'
+
+
+class ImgProductSerializer(ModelSerializer):
+
+    class Meta:
+        model = ImgProduct
+        fields = '__all__'
+
+
+class ProductSerializer(ModelSerializer):
+    images = ImgProductSerializer(many=True)
+    main_image = MainImgProductSerializer(many=False)
+
+    class Meta:
+        model = Product
+        fields = 'title', 'text', 'price', 'images', 'main_image'
 
 
 class ErrorsSerializer:
