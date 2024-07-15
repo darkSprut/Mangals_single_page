@@ -8,14 +8,14 @@ services:
       - "gunicorn"
       - "mangals.wsgi:application"
       - "--bind"
-      - "0.0.0.0:8080"
+      - "0.0.0.0:80"
 #      - "-c"
 #      - "file:gunicorn.conf.py"
       - "--capture-output"
       - "--access-logfile"  # параметр для записи логов в stderr, без этого логи Django в gunicorn не отображаются
       - "-"
     ports:
-      - "8000:8080"
+      - "80:80"
     logging:
       # Команда для установки плагина(драйвера) Loki:
       # docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
