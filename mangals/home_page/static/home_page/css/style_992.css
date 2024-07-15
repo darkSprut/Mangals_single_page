@@ -1,0 +1,76 @@
+@media (min-width: 992px) {
+    :root {
+        --font-size-standart: 70px;
+    }
+
+    .title {
+        font-family: 'Muller';
+        font-weight: 500;
+        font-size: 0.5rem;
+        color: var(--font-color);
+        margin-bottom: 20px;
+      }
+
+    .title-cont {
+        color: white;
+    }
+
+    .burger {
+        width: 40px;
+        height: 30px;
+    }
+
+    .X {
+        width: 40px;
+        height: 40px;
+    }
+
+    .main--block {
+        filter: blur(5px);
+      }
+
+    .nav-m {
+        right: 30%;
+        height: 350px;
+    }
+
+    .hero-content {
+        min-height: 400px;
+    }
+
+
+    .card-title {
+        font-size: 0.4rem;
+    }
+
+    .card-text {
+    font-size: 0.3rem;
+    }
+
+    .card-img-wrap--X {
+
+        right: 20px;
+
+    }
+
+
+    .btn-m {
+        font-size: 0.3rem;
+    }
+
+    .link-simple {
+        font-size: 0.4rem;
+    }
+
+    .form-label {
+        font-size: 0.4rem;
+    }
+}
+
+@media (min-width: 1154px) {
+    .swiper-card {
+
+        width: 40%;
+
+    }
+}

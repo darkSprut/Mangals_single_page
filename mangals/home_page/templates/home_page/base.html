@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru-ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название сайта</title>
+    <link rel="stylesheet" href="{% static 'home_page/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'home_page/css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'home_page/swiper-11.1.4/package/swiper-bundle.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'home_page/css/swiper_castom.css' %}">
+    <link rel="stylesheet" href="{% static 'home_page/bootstrap-5.3.3/package/dist/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'home_page/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'home_page/css/style_576.css' %}">
+    <link rel="stylesheet" href="{% static 'home_page/css/style_992.css' %}">
+    <script src="{% static 'home_page/vue-3.4.30/package/dist/vue.global.js' %}"></script>
+    <script defer src="{% static 'home_page/scripts/swiper_init.js' %}"></script>
+    <script defer src="{% static 'home_page/scripts/burger.js' %}"></script>
+    <script defer src="{% static 'home_page/scripts/mask_for_tel.js' %}"></script>
+    <script defer src="{% static 'home_page/axios-1.7.2/package/dist/axios.min.js' %}"></script>
+    <script defer src="{% static 'home_page/scripts/app.js' %}"></script>
+    <script defer src="{% static 'home_page/scripts/show_img.js' %}"></script>
+    <script defer src="{% static 'home_page/swiper-11.1.4/package/swiper-bundle.min.js' %}"></script>
+
+</head>
+<body>
+    <div class="body" id="body">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+/* general behavior */
+
+.swiper-wrapper {
+    padding-bottom: 20px;
+}
+
+.swiper-button-prev {
+    left: 5px !important;
+}
+
+.swiper-button-next {
+    right: 5px !important;
+}
+
+.swiper-button-prev:after {
+    text-shadow: 2px 2px 3px white, -2px -2px 3px white, -2px 2px 3px white, 2px -2px 3px white;
+}
+
+.swiper-button-next:after {
+    text-shadow: 2px 2px 3px white, -2px -2px 3px white, -2px 2px 3px white, 2px -2px 3px white;
+}
+
+.swiper-button-prev:focus-visible,
+.swiper-button-next:focus-visible,
+.card-img-wrap--X:focus-visible {
+    outline: none;
+    outline: 5px solid blue;
+    outline-offset: 3px;
+    border-radius: 5px;
+}
+
+.swiper-pagination-card,
+.swiper-pagination-hero {
+    height: 20px;
+    bottom: 5px !important;
+}
+
+.swiper-pagination-bullets {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.swiper-pagination-bullet {
+    background: gray;
+    opacity: 1;
+}
+
+.swiper-pagination-card .swiper-pagination-bullet.swiper-pagination-bullet-active,
+.swiper-pagination-hero .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: blue;
+}
+
+
+/* swiper for card images */
+
+.swiper-card {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: min-content;
+    width: 90%
+}
+
+.swiper-wrapper-card {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: min-content;
+}
+
+.swiper-slide-card {
+    height: min-content;
+}
+
+.swiper-card-img {
+    width: 100%;
+}
+

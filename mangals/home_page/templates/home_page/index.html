@@ -1,0 +1,226 @@
+{% extends "home_page/base.html" %}
+{% load static %}
+{% block content %}
+     <header class="header">
+            <div class="container d-flex flex-row justify-content-between align-items-center">
+                <button class="burger" tabindex="0">
+                    <span class="burger-span"></span>
+                    <span class="burger-span"></span>
+                    <span class="burger-span"></span>
+                </button>
+                <nav class="nav-m">
+                    <ul class="nav-m-list">
+                        <li class="nav-m-list__item">
+                            <a class="link-simple" tabindex="0">
+                              Ссылка
+                            </a>
+                        </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                          </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                          </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                          </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                          </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                          </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                          </li>
+                        <li class="nav-m-list__item">
+                              <a class="link-simple" tabindex="0">
+                                Ссылка
+                              </a>
+                        </li>
+                    </ul>
+                    <button class="X" tabindex="0">
+                    </button>
+                </nav>
+                <a class="btn-m" href="#footer-form">
+                  Связаться с нами
+                </a>
+            </div>
+     </header>
+    <main class="main">
+        <section class="section hero">
+          <div class="container">
+            <div class="hero-content">
+              {% if data.site_name %}
+              <h1 class="main_title">
+                {{ data.site_name }}
+              </h1>
+              {% else %}
+              <h1 class="main_title">
+                Название сайта
+              </h1>
+              {% endif %}
+            </div>
+          </div>
+        </section>
+        {% if example_work %}
+        <section class="section">
+            <div class="container">
+                <h2 class="title">
+                    Примеры работ
+                </h2>
+                <div class="swiper swiper-container swiper-hero col-lg-6 col-md-8">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                      {% for img in example_work %}
+                      <!-- Slides -->
+                      <div class="swiper-slide">
+                        <img class="example-img" src="{{ img.image.url }}" alt="{{ img.alt }}">
+                      </div>
+                      {% endfor %}
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-hero"></div>
+                    <div class="swiper-button-prev swiper-button-prev-hero" tabindex="0"></div>
+                    <div class="swiper-button-next swiper-button-next-hero" tabindex="0"></div>
+                    <!-- <div class="swiper-scrollbar"></div> -->
+                  </div>
+            </div>
+        </section>
+        {% endif %}
+        {% if data.about_us %}
+
+        <section class="section">
+          <div class="container">
+            <h2 class="title">
+              О нас
+            </h2>
+            <p class="card-text">
+              {{ data.about_us }}
+            </p>
+          </div>
+        </section>
+
+        {% endif %}
+        <section v-if="products" class="section">
+          <div class="container">
+            <h2 class="title">
+              Каталог
+            </h2>
+            <ul class="catalog-list row">
+              <li v-for="product in products" class="catalog-list__item col col-sm-10 col-lg-6">
+                <article class="card-article">
+                    <div class="card-img-wrap">
+                        <div class="swiper swiper-container swiper-card col-lg-6 col-md-8">
+                        <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper swiper-wrapper-card">
+                              <!-- Slides -->
+                              <div v-for="img in product.images" class="swiper-slide swiper-slide-card">
+                                <img class="swiper-card-img" :src="img.image" :alt="img.alt">
+                              </div>
+                            </div>
+                            <div class="swiper-pagination swiper-pagination-card"></div>
+                            <div class="swiper-button-prev swiper-button-prev-card" tabindex="0"></div>
+                            <div class="swiper-button-next swiper-button-next-card" tabindex="0"></div>
+                        <!-- <div class="swiper-scrollbar-card"></div> -->
+                        </div>
+                        <button class="card-img-wrap--X" tabindex="0">
+                        </button>
+                    </div>
+                    <div class="card">
+                        <img :src="product.main_image.image" class="card-img-top" :alt="product.main_image.alt">
+                        <div class="card-body">
+                          <h3 class="card-title">${ product.title }$</h3>
+                          <p class="card-text">
+                            ${ product.text }$
+                          </p>
+                        <p class="card-price" tabindex="-1">
+                            <button class="btn-before" tabindex="0"></button>
+                            ${ product.price }$ ₽
+                        </p>
+                        </div>
+                    </div>
+                </article>
+              </li>
+            </ul>
+            <div v-if="show_more" class="d-flex flex-centr align-items-center">
+                <button class="btn-m" @click="getProducts()">Показать ещё</button>
+            </div>
+          </div>
+        </section>
+        <!-- <section class="section">
+
+        </section> -->
+    </main>
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer-cont d-flex flex-column align-items-center justify-content-center">
+          <ul class="footer-cont-list d-flex flex-column align-items-start justify-content-center footer-view--tel col-12 col-md-8" data-cont="1" id="contacts">
+            <li class="footer-cont-list__item ">
+              <h3 class="title-cont">
+                Телефон
+              </h3>
+              <a class="footer-cont-list__link btn-tel" href="tel:+{{ data.tel }}">+{{ data.tel }}</a>
+            </li>
+          </ul>
+          <form class="footer-form col-12 col-sm-12 col-md-8" id="footer-form" method="post" action="#" @submit.prevent="submitMessage" autocomplete="off">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Как к Вам обращаться</label>
+              <p class="form-err" v-if="name_err">
+                ${ name_err }$
+              </p>
+              <input type="text" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="name" v-model="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput2" class="form-label">Email</label>
+              <p class="form-err" v-if="email_err">
+                ${ email_err }$
+              </p>
+              <input type="email" class="form-control form-control-sm" id="exampleFormControlInput2" placeholder="name@example.com" v-model="email">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput3" class="form-label">Телефон для связи с вами</label>
+              <p class="form-err" v-if="tel_err">
+                ${ tel_err }$
+              </p>
+              <input type="text" class="form-control form-control-sm" id="exampleFormControlInput3" v-model="tel" required autocomplete="off">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea4" class="form-label">Сообщение</label>
+              <p class="form-err" v-if="message_err">
+                ${ message_err }$
+              </p>
+              <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" v-model="message" required></textarea>
+            </div>
+            <div class="timer-wrapper">
+              <button v-if="!posted" type="submit" class="btn-m" tabindex="0">Отправить</button>
+              <a v-if="posted"class="btn-m"> Следующее сообщение через: ${ timer_actual }$s</a>
+            </div>
+          </form>
+          <div v-if="show_envelope" class="form-complite">
+            <div class="form-complite-envelope">
+            </div>
+            <p class="form-complite-text">
+              Отправлено!
+            </p>
+          </div>
+          <ul v-if="waiting_response" class="waiting_response">
+            <li class="waiting_response__span"></li>
+            <li class="waiting_response__span"></li>
+            <li class="waiting_response__span"></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+{% endblock %}
