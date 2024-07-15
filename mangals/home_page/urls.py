@@ -4,6 +4,7 @@ from .views import IndexView, MessagesView, ProductsView
 
 urlpatterns = [
     path('', IndexView.as_view(), name='home_page'),
-    path('products/', ProductsView.as_view(), name='products'),
+    path('products/', ProductsView.as_view(), name='products-index'),
+    path('products/<int:count>/', ProductsView.as_view(), name='products'),
     path('submit/', MessagesView.as_view(), name='submit-message'),
 ]

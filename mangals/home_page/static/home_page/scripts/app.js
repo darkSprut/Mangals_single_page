@@ -38,10 +38,15 @@ const app = Vue.createApp(
                 axios.defaults.headers.common['X-CSRFToken'] = this.getCookie('csrftoken');
                 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
                 this.waiting_response = true
-                axios.get('products/',  JSON.stringify({...this})
+                axios.get(`products/${this.count_products_in_page}/`,  JSON.stringify({...this})
             ).then(response =>{
                 this.waiting_response = false
                 this.products = response.data
+                if (this.products.length == this.count_products_in_page) {
+                    this.show_more = false
+                } else {
+                    this.count_products_in_page += 2
+                }
             })
             },
 
@@ -101,10 +106,12 @@ const app = Vue.createApp(
                 tel_err: null,
                 message_err: null,
                 products: null,
+                count_products_in_page: 0,
                 posted: false,
                 timer_default: 30,
                 timer_actual: null,
                 show_envelope: false,
+                show_more: true,
                 waiting_response: false,
             }
         },

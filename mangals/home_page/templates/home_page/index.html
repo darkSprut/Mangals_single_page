@@ -99,13 +99,27 @@
             </div>
         </section>
         {% endif %}
+        {% if data.about_us %}
+
+        <section class="section">
+          <div class="container">
+            <h2 class="title">
+              О нас
+            </h2>
+            <p class="card-text">
+              {{ data.about_us }}
+            </p>
+          </div>
+        </section>
+
+        {% endif %}
         <section v-if="products" class="section">
           <div class="container">
             <h2 class="title">
               Каталог
             </h2>
-            <ul v-for="product in products" class="catalog-list row">
-              <li class="catalog-list__item col col-sm-10 col-lg-6">
+            <ul class="catalog-list row">
+              <li v-for="product in products" class="catalog-list__item col col-sm-10 col-lg-6">
                 <article class="card-article">
                     <div class="card-img-wrap">
                         <div class="swiper swiper-container swiper-card col-lg-6 col-md-8">
@@ -140,6 +154,9 @@
                 </article>
               </li>
             </ul>
+            <div v-if="show_more" class="d-flex flex-centr align-items-center">
+                <button class="btn-m" @click="getProducts()">Показать ещё</button>
+            </div>
           </div>
         </section>
         <!-- <section class="section">

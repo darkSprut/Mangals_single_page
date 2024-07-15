@@ -483,9 +483,17 @@
   border-radius: 5px;
 }
 
+.catalog-list {
+  margin-bottom: 30px;
+}
+
 .catalog-list__item {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.card-article {
+  height: 100%;
 }
 
 .btn-before {
@@ -510,21 +518,14 @@
 }
 
 .card {
-
     transform: none;
     transition: transform 0.2s ease-in-out;
+    height: 100%;
 }
 
-/* .card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  cursor: pointer;
-  z-index: 9999;
-} */
+.card-img-top {
+  height: 300px;
+}
 
 .card:hover {
     transform: scale(1.03, 1.03);

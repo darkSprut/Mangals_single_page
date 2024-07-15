@@ -9,6 +9,7 @@ from .validators import tel_ru_validator
 class Data(models.Model):
     site_name = models.CharField(max_length=50)
     tel = models.IntegerField()
+    about_us = models.TextField(null=True, blank=True)
 
     class Meta:
         verbose_name = 'Данные сайта'

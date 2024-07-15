@@ -7,6 +7,8 @@ from rest_framework.generics import GenericAPIView, ListAPIView
 from .serializers import MessageSerializer, ErrorsSerializer, ProductSerializer
 from django.core.mail import send_mail
 from .utils import bild_message
+
+
 # Create your views here.
 
 
@@ -17,13 +19,20 @@ class IndexView(TemplateView):
         context = super().get_context_data()
         context["data"] = Data.objects.first()
         context["example_work"] = ExamplesOfWorks.objects.all()
-        context["products"] = Product.objects.filter(available=True).select_related("main_image").prefetch_related("images")
         return context
 
 
 class ProductsView(ListAPIView):
-    queryset = Product.objects.filter(available=True).select_related("main_image").prefetch_related("images")
     serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        end = 2
+        step = self.kwargs.get("count")
+        end += step
+        queryset = (Product.objects.filter(available=True)
+                    .select_related("main_image")
+                    .prefetch_related("images")[0:end])
+        return queryset
 
 
 class MessagesView(APIView):
@@ -42,6 +51,3 @@ class MessagesView(APIView):
         else:
             serialize_errors_data = ErrorsSerializer(serializer.errors).data()
             return Response(data=serialize_errors_data)
-
-
-
