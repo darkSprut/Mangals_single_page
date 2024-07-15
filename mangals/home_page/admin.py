@@ -16,6 +16,25 @@ class DataAdmin(admin.ModelAdmin):
     list_display = ["pk", "site_name", "tel"]
     list_display_links = ["pk", "site_name"]
 
+    fieldsets = [
+        (
+            "Название сайта", {
+                "fields": ["site_name"],
+            }
+        ),
+        (
+            "Телефон", {
+                "fields": ["tel"],
+            },
+        ),
+        (
+            "О нас", {
+                "fields": ["about_us"],
+                "description": "не отображается на сайте если пусто"
+            },
+        ),
+    ]
+
 
 @admin.register(ExamplesOfWorks)
 class ExamplesOfWorksAdmin(admin.ModelAdmin):

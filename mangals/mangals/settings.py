@@ -11,21 +11,50 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+import logging
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+dotenv_path = os.path.join(BASE_DIR.parent, '.env')
+if os.path.exists(dotenv_path):
+    load_dotenv(dotenv_path)
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$q1h=o(q4dmi5my0s)tj!&-$_o*gug*f(!vxv&oq(gdg_3lqyq'
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-!v4%ha=6o=7x@(60g+4!-h+nzv&j11c%1w5l_z6)9f9zv*srmc")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DJANGO_DEBUG", True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "0.0.0.0",
+    "127.0.0.1",
+
+]
+
+ENVIRONMENT_HOST = os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS.extend(ENVIRONMENT_HOST)
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+    "0.0.0.0",
+]
+
+if DEBUG:
+    import socket
+    hostname, a, ips = socket.gethostbyname_ex(socket.gethostname())
+    INTERNAL_IPS.append("10.0.2.2")
+    INTERNAL_IPS.extend(
+
+        [ip[: ip.rfind(".")] + '.1' for ip in ips]
+    )
 
 
 # Application definition
@@ -75,18 +104,21 @@ WSGI_APPLICATION = 'mangals.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+DATABASE_DIR = BASE_DIR / "database"
+DATABASE_DIR.mkdir(exist_ok=True)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': DATABASE_DIR / 'db.sqlite3',
     }
 }
 
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'accountkazakov'
-EMAIL_HOST_PASSWORD = 'bmeacbjitsbifokk'
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_PORT = os.getenv("EMAIL_PORT")
+EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 
 
 # Password validation
@@ -124,6 +156,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_ROOT = BASE_DIR / 'uploads'
 MEDIA_URL = '/media/'
 
@@ -131,3 +164,61 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGLEVEL = os.getenv("DJANGO_LOGLEVEL", "INFO").upper()
+
+old_factory = logging.getLogRecordFactory()
+
+
+# новая фабрика записи для аккуратного вывода сообщения
+def record_factory(*args, **kwargs):
+    record = old_factory(*args, **kwargs)
+    # было msg = %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+    # record.msg = "%(t)s %(r)s %(s)s"
+    return record
+
+
+logging.setLogRecordFactory(record_factory)
+LOG_DIR = BASE_DIR / "logs"
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "[%(asctime)s] [%(levelname)s] %(name)s: %(message)s",
+            },
+        # "verbose": {
+        #     "format": "%(message)s",
+        # },
+        },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+                },
+        "file": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": "logs/django_log.log",
+            "maxBytes": 100000,
+            "backupCount": 5,
+        },
+    },
+    "loggers": {
+        "django": {
+            "level": LOGLEVEL,
+            "handlers": ["console", "file"],
+            "propagate": True,
+        },
+        "gunicorn": {
+            "level": LOGLEVEL,
+            "handlers": ["console", "file"],
+            "propagate": True,
+        },
+    },
+    # "root": {
+    #     "handlers": ["console"],
+    #     "level": "INFO",
+    # },
+}
+

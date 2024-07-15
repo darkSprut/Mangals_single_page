@@ -3,12 +3,10 @@ from .models import Data, ExamplesOfWorks, Product
 from rest_framework.views import APIView
 from rest_framework.request import Request
 from rest_framework.response import Response
-from rest_framework.generics import GenericAPIView, ListAPIView
+from rest_framework.generics import ListAPIView
 from .serializers import MessageSerializer, ErrorsSerializer, ProductSerializer
 from django.core.mail import send_mail
 from .utils import bild_message
-
-
 # Create your views here.
 
 
@@ -24,11 +22,11 @@ class IndexView(TemplateView):
 
 class ProductsView(ListAPIView):
     serializer_class = ProductSerializer
+    product_in_page = 2
 
     def get_queryset(self):
-        end = 2
         step = self.kwargs.get("count")
-        end += step
+        end = self.product_in_page + step
         queryset = (Product.objects.filter(available=True)
                     .select_related("main_image")
                     .prefetch_related("images")[0:end])

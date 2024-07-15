@@ -1,0 +1,63 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      dockerfile: ./Dockerfile
+#    command: >
+#      sh -c "python manage.py migrate && gunicorn myproject.wsgi:application --bind 0.0.0.0:8080"
+    command:
+      - "gunicorn"
+      - "--workers=2"
+      - "mangals.wsgi:application"
+      - "--bind"
+      - "0.0.0.0:8080"
+#      - "-c"
+#      - "file:gunicorn.conf.py"
+      - "--capture-output"
+      - "--access-logfile"  # параметр для записи логов в stderr, без этого логи Django в gunicorn не отображаются
+      - "-"
+    ports:
+      - "8000:8080"
+    logging:
+      # Команда для установки плагина(драйвера) Loki:
+      # docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
+      driver: loki
+      options:
+        # куда передавать логи
+        loki-url: http://host.docker.internal:3100/loki/api/v1/push
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - "./mangals/database:/app/database"
+      - "./mangals/uploads:/app/uploads"
+      - "./mangals/static:/app/static"
+      - "./mangals/logs:/app/logs"
+  grafana:
+    # после обьявления image grafana и loki выполнить комманду docker compose pull для загрузки образов
+    image: grafana/grafana:9.2.15
+    environment:
+    # вход под анонимным пользователем
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+    # роль аномимного пользователя админ
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+    # настройки для доступа к логам из прокси сервера по пути /grafana
+#      - GF_SERVER_ROOT_URL=http://${PROXY_SERVER_IP}:80/grafana/
+#      - GF_SERVER_SERVE_FROM_SUB_PATH=true
+    ports:
+      - "3000:3000"
+
+  loki:
+    image: grafana/loki:2.8.0
+    ports:
+      - "3100:3100"
+
+  promtail:
+    image: grafana/promtail:3.0.0
+    ports:
+      - "9080:9080"
+    volumes:
+      - "./mangals/logs:/var/log"
+      - "./promtail-config.yml:/etc/promtail/config.yml"
+
