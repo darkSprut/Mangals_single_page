@@ -6,6 +6,7 @@ services:
 #      sh -c "python manage.py migrate && gunicorn myproject.wsgi:application --bind 0.0.0.0:8080"
     command:
       - "gunicorn"
+      - "--workers 4"
       - "mangals.wsgi:application"
       - "--bind"
       - "0.0.0.0:80"
