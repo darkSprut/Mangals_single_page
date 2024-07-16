@@ -175,7 +175,7 @@ old_factory = logging.getLogRecordFactory()
 def record_factory(*args, **kwargs):
     record = old_factory(*args, **kwargs)
     # было msg = %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
-    # record.msg = "%(t)s %(r)s %(s)s"
+    record.msg = "%(t)s %(r)s %(s)s"
     return record
 
 
@@ -185,12 +185,12 @@ LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
     "formatters": {
-        "verbose": {
-            "format": "[%(asctime)s] [%(levelname)s] %(name)s: %(message)s",
-            },
         # "verbose": {
-        #     "format": "%(message)s",
-        # },
+        #     "format": "[%(asctime)s] [%(levelname)s] %(name)s: %(message)s",
+        #     },
+        "verbose": {
+            "format": "%(message)s",
+        },
         },
     "handlers": {
         "console": {

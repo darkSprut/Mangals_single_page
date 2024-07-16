@@ -8,7 +8,7 @@ positions:
   filename: /var/log/positions.yaml # This location needs to be writeable by Promtail.
 
 clients:
-  - url: http://${HOST}:3100/loki/api/v1/push
+  - url: http://localhost:3100/loki/api/v1/push
 
 scrape_configs:
  - job_name: system
@@ -18,5 +18,5 @@ scrape_configs:
       - localhost
      labels:
       job: varlogs  # A `job` label is fairly standard in prometheus and useful for linking metrics and logs.
-      host: ${HOST} # A `host` label will help identify logs from this machine vs others
-      __path__: ./logs/*.log  # The path matching uses a third party library: https://github.com/bmatcuk/doublestar
+      host: localhost # A `host` label will help identify logs from this machine vs others
+      __path__: /var/log/*.log  # The path matching uses a third party library: https://github.com/bmatcuk/doublestar
