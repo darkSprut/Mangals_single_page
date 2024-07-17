@@ -378,7 +378,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../img/frame.png');
+    background-image: url('../img/frame.webp');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -681,7 +681,7 @@
 .form-complite-envelope {
   width: 222px;
   height: 222px;
-  background-image: url("../img/envelope.png");
+  background-image: url("../img/envelope.webp");
   background-repeat: no-repeat;
   background-size: contain;
 }

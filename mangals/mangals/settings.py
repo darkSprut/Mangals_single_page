@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import logging
+import logging.config
+from .utils import convert_yml_dict
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -165,60 +167,19 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-LOGLEVEL = os.getenv("DJANGO_LOGLEVEL", "INFO").upper()
-
-old_factory = logging.getLogRecordFactory()
+LOGGING_CONFIG = None
+# old_factory = logging.getLogRecordFactory()
 
 
-# новая фабрика записи для аккуратного вывода сообщения
-def record_factory(*args, **kwargs):
-    record = old_factory(*args, **kwargs)
-    # было msg = %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
-    record.msg = "%(t)s %(r)s %(s)s"
-    return record
+# новая фабрика записи для аккуратного вывода сообщения,
+# в случае, если логи вложенные один в другой
+# def record_factory(*args, **kwargs):
+#     record = old_factory(*args, **kwargs)
+#     # было msg = %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+#     # record.msg = "%(t)s %(r)s %(s)s"
+#     return record
 
 
-logging.setLogRecordFactory(record_factory)
-LOG_DIR = BASE_DIR / "logs"
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        # "verbose": {
-        #     "format": "[%(asctime)s] [%(levelname)s] %(name)s: %(message)s",
-        #     },
-        "verbose": {
-            "format": "%(message)s",
-        },
-        },
-    "handlers": {
-        "console": {
-            "class": "logging.StreamHandler",
-            "formatter": "verbose",
-                },
-        "file": {
-            "class": "logging.handlers.RotatingFileHandler",
-            "filename": "logs/django_log.log",
-            "maxBytes": 100000,
-            "backupCount": 5,
-        },
-    },
-    "loggers": {
-        "django": {
-            "level": LOGLEVEL,
-            "handlers": ["console", "file"],
-            "propagate": True,
-        },
-        "gunicorn": {
-            "level": LOGLEVEL,
-            "handlers": ["console", "file"],
-            "propagate": True,
-        },
-    },
-    # "root": {
-    #     "handlers": ["console"],
-    #     "level": "INFO",
-    # },
-}
-
+# logging.setLogRecordFactory(record_factory)
+data = convert_yml_dict(os.path.join(BASE_DIR.parent, 'logging-config.yaml'))
+logging.config.dictConfig(data)
