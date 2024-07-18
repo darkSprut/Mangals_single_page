@@ -16,13 +16,10 @@
     <link rel="stylesheet" href="{% static 'home_page/css/style_992.css' %}">
     <script src="{% static 'home_page/vue-3.4.30/package/dist/vue.global.js' %}"></script>
     <script src="{% static 'home_page/axios-1.7.2/package/dist/axios.min.js' %}"></script>
-    <script defer src="{% static 'home_page/scripts/app.js' %}"></script>
-    <script defer src="{% static 'home_page/scripts/swiper_init.js' %}"></script>
-    <script defer src="{% static 'home_page/scripts/burger.js' %}"></script>
-    <script defer src="{% static 'home_page/scripts/mask_for_tel.js' %}"></script>
-    <script defer src="{% static 'home_page/scripts/show_img.js' %}"></script>
-    <script defer src="{% static 'home_page/swiper-11.1.4/package/swiper-bundle.min.js' %}"></script>
-
+    <script src="{% static 'home_page/swiper-11.1.4/package/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'home_page/scripts/app.js' %}" type="module"></script>
+    {% block mixin %}
+    {% endblock %}
 </head>
 <body>
     <div class="body" id="body">

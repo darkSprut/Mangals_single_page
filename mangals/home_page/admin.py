@@ -1,5 +1,9 @@
 from django.contrib import admin
 from .models import Data, ExamplesOfWorks, Product, MainImgProduct, ImgProduct, Message
+from .forms import ProductImageForm, ProductImageModelForm, FileFieldForm
+from django import forms
+from django.urls import path
+from django.shortcuts import render
 import gettext
 
 
@@ -38,6 +42,7 @@ class DataAdmin(admin.ModelAdmin):
 
 @admin.register(ExamplesOfWorks)
 class ExamplesOfWorksAdmin(admin.ModelAdmin):
+    # list_display = ["pk", "image_tag", "created_at", ]
     list_display = ["pk", "created_at", ]
     list_display_links = ["pk", "created_at"]
 

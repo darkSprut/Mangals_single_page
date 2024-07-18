@@ -1,4 +1,4 @@
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView, View
 from .models import Data, ExamplesOfWorks, Product
 from rest_framework.views import APIView
 from rest_framework.request import Request

@@ -59,4 +59,3 @@ services:
     volumes:
       - "./mangals/logs:/var/log"
       - "./promtail-config.yml:/etc/promtail/config.yml"
-

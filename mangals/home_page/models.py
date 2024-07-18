@@ -3,6 +3,7 @@ from .utils import *
 from django.core.validators import (MinLengthValidator, EmailValidator,
                                     MaxLengthValidator, RegexValidator)
 from .validators import tel_ru_validator
+from django.utils.html import mark_safe
 # Create your models here.
 
 
@@ -34,6 +35,11 @@ class ExamplesOfWorks(models.Model):
         verbose_name = 'Пример работы'
         verbose_name_plural = 'Примеры работ'
 
+    # def image_tag(self):
+    #     return mark_safe('<img src="%s" width="60px" height="60px" />' % (self.image.url))
+    #
+    # image_tag.short_description = 'Image'
+
 
 class MainImgProduct(models.Model):
     image = models.ImageField(upload_to=main_img_product_upload)
@@ -47,7 +53,7 @@ class MainImgProduct(models.Model):
 class ImgProduct(models.Model):
     image = models.ImageField(upload_to=img_product_upload)
     alt = models.CharField(max_length=50, default="img")
-    product = models.ForeignKey("Product", related_name="images",  on_delete=models.CASCADE)
+    product = models.ForeignKey("Product", related_name="images",  on_delete=models.CASCADE, null=True, blank=True)
 
     class Meta:
         verbose_name = 'Изображение'
