@@ -219,6 +219,7 @@
 
   .body--block {
     overflow: hidden;
+    visibility: hidden;
   }
 
   .header {
@@ -494,6 +495,7 @@
 
 .card-article {
   height: 100%;
+  position: relative;
 }
 
 .btn-before {
@@ -521,10 +523,24 @@
     transform: none;
     transition: transform 0.2s ease-in-out;
     height: 100%;
+    cursor: pointer;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
 }
 
 .card-img-top {
+  display: block;
   height: 300px;
+  object-fit: cover;
+  object-position: left top;
 }
 
 .card:hover {
@@ -540,14 +556,24 @@
     align-items: center;
     padding-top: 40px;
     padding-bottom: 40px;
-    top: 15%;
-    bottom: 15%;
+    top: 5%;
+    bottom: 5%;
     left: 0;
     right: 0;
     width: 100vw;
     background-color: #000000;
-    z-index: 9999;
+    z-index: 999;
+    visibility: visible;
     animation: show_img--off 0.3s ease-in-out forwards;
+}
+
+.card-img-wrap::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -15%;
+  bottom: -15%;
 }
 
 .card-img-wrap--on {
@@ -565,9 +591,19 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 999999999999999999999999999999999999;
+    z-index: 9999;
     cursor: pointer;
+    transition: background 0.2s ease-in-out;
+
 }
+
+.card-img-wrap--X:hover {
+  background: url("../img/X.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background 0.2s ease-in-out;
+} 
 
 .card-title {
   font-size: 0.6rem;

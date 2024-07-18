@@ -181,5 +181,5 @@ LOGGING_CONFIG = None
 
 
 # logging.setLogRecordFactory(record_factory)
-data = convert_yml_dict(os.path.join(BASE_DIR.parent, 'logging-config.yaml'))
+data = convert_yml_dict(os.path.join(BASE_DIR, 'logging-config.yaml'))
 logging.config.dictConfig(data)

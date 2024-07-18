@@ -1,5 +1,304 @@
 [
 {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2024-07-17T16:39:24.994Z",
+        "user": 3,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Общая информация",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2024-07-17T16:40:03.778Z",
+        "user": 3,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "ExamplesOfWorks object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2024-07-17T16:40:12.230Z",
+        "user": 3,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "ExamplesOfWorks object (2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2024-07-17T16:40:24.294Z",
+        "user": 3,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "ExamplesOfWorks object (3)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2024-07-17T16:40:35.054Z",
+        "user": 3,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "ExamplesOfWorks object (4)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2024-07-17T16:40:47.936Z",
+        "user": 3,
+        "content_type": 8,
+        "object_id": "5",
+        "object_repr": "ExamplesOfWorks object (5)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2024-07-17T16:40:55.970Z",
+        "user": 3,
+        "content_type": 8,
+        "object_id": "6",
+        "object_repr": "ExamplesOfWorks object (6)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2024-07-17T22:03:29.674Z",
+        "user": 3,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Товар_№1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"MainImgProduct object (1)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (1)\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2024-07-18T08:55:12.703Z",
+        "user": 3,
+        "content_type": 11,
+        "object_id": "2",
+        "object_repr": "ImgProduct object (2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2024-07-18T08:55:51.609Z",
+        "user": 3,
+        "content_type": 11,
+        "object_id": "2",
+        "object_repr": "ImgProduct object (2)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2024-07-18T08:57:06.328Z",
+        "user": 3,
+        "content_type": 11,
+        "object_id": "2",
+        "object_repr": "ImgProduct object (2)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2024-07-18T09:00:16.418Z",
+        "user": 3,
+        "content_type": 11,
+        "object_id": "3",
+        "object_repr": "ImgProduct object (3)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2024-07-18T09:02:57.198Z",
+        "user": 3,
+        "content_type": 11,
+        "object_id": "3",
+        "object_repr": "ImgProduct object (3)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2024-07-18T09:02:57.214Z",
+        "user": 3,
+        "content_type": 11,
+        "object_id": "2",
+        "object_repr": "ImgProduct object (2)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2024-07-18T09:02:57.236Z",
+        "user": 3,
+        "content_type": 11,
+        "object_id": "1",
+        "object_repr": "ImgProduct object (1)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2024-07-18T09:05:12.294Z",
+        "user": 3,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Товар_№1",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2024-07-18T09:34:12.979Z",
+        "user": 3,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "Товар_№2",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"MainImgProduct object (2)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (4)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (5)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (6)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (7)\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2024-07-18T09:36:50.582Z",
+        "user": 3,
+        "content_type": 9,
+        "object_id": "3",
+        "object_repr": "Товар_№3",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"MainImgProduct object (3)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (8)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (9)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (10)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (11)\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2024-07-18T09:40:49.501Z",
+        "user": 3,
+        "content_type": 9,
+        "object_id": "4",
+        "object_repr": "Товар_№4",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (12)\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2024-07-18T09:42:28.827Z",
+        "user": 3,
+        "content_type": 9,
+        "object_id": "4",
+        "object_repr": "Товар_№4",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"MainImgProduct object (4)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (13)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (14)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (15)\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2024-07-18T09:44:19.570Z",
+        "user": 3,
+        "content_type": 9,
+        "object_id": "5",
+        "object_repr": "Товар_№5",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"MainImgProduct object (5)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (16)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (17)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (18)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (19)\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2024-07-18T09:46:14.104Z",
+        "user": 3,
+        "content_type": 9,
+        "object_id": "6",
+        "object_repr": "Товар_№6",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"MainImgProduct object (6)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (20)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (21)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (22)\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2024-07-18T09:47:51.861Z",
+        "user": 3,
+        "content_type": 9,
+        "object_id": "7",
+        "object_repr": "Товар_№7",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"MainImgProduct object (7)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (23)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (24)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (25)\"}}, {\"added\": {\"name\": \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"ImgProduct object (26)\"}}]"
+    }
+},
+{
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -433,10 +732,28 @@
 },
 {
     "model": "auth.user",
-    "pk": 1,
+    "pk": 2,
     "fields": {
-        "password": "pbkdf2_sha256$720000$QrTp8d8AdoubiRjW0A3exA$fnnSGIN+TwCXid9MEFWY7VExS4NuN3mhBAS+Jd2oq08=",
+        "password": "pbkdf2_sha256$720000$3rVeHklWlT3pUF1mmT1bNi$vJBGaZ3/9P0A3cixKumGPrC6h52yTdZiGwF0SNahxQ8=",
         "last_login": null,
+        "is_superuser": false,
+        "username": "admin2",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-07-17T16:29:35.199Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$TeyGygjyA26S3Wa9YSzL7z$s5UZhCU5XaMe5t6XAUW/GGH5lhIlLj5OGj/fY/fprKI=",
+        "last_login": "2024-07-17T16:34:17.655Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -444,7 +761,7 @@
         "email": "",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2024-07-15T16:42:12.269Z",
+        "date_joined": "2024-07-17T16:33:52.314Z",
         "groups": [],
         "user_permissions": []
     }
@@ -546,14 +863,610 @@
     }
 },
 {
-    "model": "home_page.message",
+    "model": "sessions.session",
+    "pk": "317gyfz1yj6p98iz7gvng1bkfch0em24",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAUBf-FtSFAeRSX7v0Gch8gVUOT0q6M_65NutDtmZnzEgm2taat5yVNLM5iEKffDYEeue2A79Bus6S5rcuEclfkQbu8zpyfl8P9O6jQ67eOTsGYMdpSwASrYzRDiNpr1qS8cZw9FbTacQm2WFaEFoIDbbDkkUi8P9h6ODU:1sU7bd:KqrfNvWf6xdoXErGT_SsgtFfqV8FmKwTJnAE3Y4S6bg",
+        "expire_date": "2024-07-31T16:34:17.674Z"
+    }
+},
+{
+    "model": "home_page.data",
     "pk": 1,
     "fields": {
-        "name": "ffffffffffffffffffffff",
+        "site_name": "Mangaloff",
+        "tel": 79998887766,
+        "about_us": "Производство мангалов начинается с разработки чертежа. Затем выбирают материал для изготовления мангала. Обычно это сталь, чугун или нержавеющая сталь. Сталь — самый распространённый материал, так как она прочная и долговечная. Чугун тяжелее стали, но он лучше сохраняет тепло. Нержавеющая сталь устойчива к коррозии, но стоит дороже.\r\n// это тестовый текст //"
+    }
+},
+{
+    "model": "home_page.examplesofworks",
+    "pk": 1,
+    "fields": {
+        "image": "examples/2024/07/17/1673000897_happyhouse-guru-p-mangal-besedka-s-krishei-krasivo-4.jpg",
+        "alt": "example_work",
+        "created_at": "2024-07-17T16:40:03.777Z"
+    }
+},
+{
+    "model": "home_page.examplesofworks",
+    "pk": 2,
+    "fields": {
+        "image": "examples/2024/07/17/askett.jpg",
+        "alt": "example_work",
+        "created_at": "2024-07-17T16:40:12.229Z"
+    }
+},
+{
+    "model": "home_page.examplesofworks",
+    "pk": 3,
+    "fields": {
+        "image": "examples/2024/07/17/fd8da8457cb6572c6df4f75668cf1629.jpg",
+        "alt": "example_work",
+        "created_at": "2024-07-17T16:40:24.293Z"
+    }
+},
+{
+    "model": "home_page.examplesofworks",
+    "pk": 4,
+    "fields": {
+        "image": "examples/2024/07/17/IMG_20201024_101159.jpg",
+        "alt": "example_work",
+        "created_at": "2024-07-17T16:40:35.054Z"
+    }
+},
+{
+    "model": "home_page.examplesofworks",
+    "pk": 5,
+    "fields": {
+        "image": "examples/2024/07/17/kak-pravilno-vibrat-mangal.jpg",
+        "alt": "example_work",
+        "created_at": "2024-07-17T16:40:47.935Z"
+    }
+},
+{
+    "model": "home_page.examplesofworks",
+    "pk": 6,
+    "fields": {
+        "image": "examples/2024/07/17/malyj_s_drovnicej.jpg",
+        "alt": "example_work",
+        "created_at": "2024-07-17T16:40:55.969Z"
+    }
+},
+{
+    "model": "home_page.mainimgproduct",
+    "pk": 2,
+    "fields": {
+        "image": "product/main_img/2024/07/18/1673000897_happyhouse-guru-p-mangal-besedka-s-krishei-krasivo-4.jpg",
+        "alt": "img",
+        "product": 2
+    }
+},
+{
+    "model": "home_page.mainimgproduct",
+    "pk": 3,
+    "fields": {
+        "image": "product/main_img/2024/07/18/askett.jpg",
+        "alt": "img",
+        "product": 3
+    }
+},
+{
+    "model": "home_page.mainimgproduct",
+    "pk": 4,
+    "fields": {
+        "image": "product/main_img/2024/07/18/fd8da8457cb6572c6df4f75668cf1629.jpg",
+        "alt": "img",
+        "product": 4
+    }
+},
+{
+    "model": "home_page.mainimgproduct",
+    "pk": 5,
+    "fields": {
+        "image": "product/main_img/2024/07/18/IMG_20201024_101159.jpg",
+        "alt": "img",
+        "product": 5
+    }
+},
+{
+    "model": "home_page.mainimgproduct",
+    "pk": 6,
+    "fields": {
+        "image": "product/main_img/2024/07/18/kak-pravilno-vibrat-mangal.jpg",
+        "alt": "img",
+        "product": 6
+    }
+},
+{
+    "model": "home_page.mainimgproduct",
+    "pk": 7,
+    "fields": {
+        "image": "product/main_img/2024/07/18/malyj_s_drovnicej.jpg",
+        "alt": "img",
+        "product": 7
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 4,
+    "fields": {
+        "image": "product/img/2024/07/18/1920x1200_1131129_www.ArtFile.ru.jpg",
+        "alt": "img",
+        "product": 2
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 5,
+    "fields": {
+        "image": "product/img/2024/07/18/2560x1600_835577_www.ArtFile.ru.jpg",
+        "alt": "img",
+        "product": 2
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 6,
+    "fields": {
+        "image": "product/img/2024/07/18/3264x2176_750484_www.ArtFile.ru.jpg",
+        "alt": "img",
+        "product": 2
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 7,
+    "fields": {
+        "image": "product/img/2024/07/18/433183-Kysb.jpg",
+        "alt": "img",
+        "product": 2
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 8,
+    "fields": {
+        "image": "product/img/2024/07/18/1649112673_64-vsegda-pomnim-com-p-chudesnii-mir-prirodi-foto-67.jpg",
+        "alt": "img",
+        "product": 3
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 9,
+    "fields": {
+        "image": "product/img/2024/07/18/1697095396_balthazar-club-p-krasivie-mesta-prirodi-oboi-16.jpg",
+        "alt": "img",
+        "product": 3
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 10,
+    "fields": {
+        "image": "product/img/2024/07/18/1676935044_bronk-club-p-otkritki-prirodi-ochen-krasivie-krasivo-5.jpg",
+        "alt": "img",
+        "product": 3
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 11,
+    "fields": {
+        "image": "product/img/2024/07/18/1675060984_3-101.jpg",
+        "alt": "img",
+        "product": 3
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 12,
+    "fields": {
+        "image": "product/img/2024/07/18/1674396417_3-13.jpg",
+        "alt": "img",
+        "product": 4
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 13,
+    "fields": {
+        "image": "product/img/2024/07/18/orig.webp",
+        "alt": "img",
+        "product": 4
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 14,
+    "fields": {
+        "image": "product/img/2024/07/18/1676935044_bronk-club-p-otkritki-prirodi-ochen-krasivie-krasivo-5_kXlcbZg.jpg",
+        "alt": "img",
+        "product": 4
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 15,
+    "fields": {
+        "image": "product/img/2024/07/18/mountains-lake-reflection-trees-1180204.jpg",
+        "alt": "img",
+        "product": 4
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 16,
+    "fields": {
+        "image": "product/img/2024/07/18/1675060984_3-101_eUW3AIQ.jpg",
+        "alt": "img",
+        "product": 5
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 17,
+    "fields": {
+        "image": "product/img/2024/07/18/1649112673_64-vsegda-pomnim-com-p-chudesnii-mir-prirodi-foto-67_5QJIxjD.jpg",
+        "alt": "img",
+        "product": 5
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 18,
+    "fields": {
+        "image": "product/img/2024/07/18/2560x1600_835577_www.ArtFile.ru_gk1rxZd.jpg",
+        "alt": "img",
+        "product": 5
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 19,
+    "fields": {
+        "image": "product/img/2024/07/18/ps-spring-Bank-mount-scenery-aqua-nature-reserve-tree-mountain-fu_6bLLThx.jpg",
+        "alt": "img",
+        "product": 5
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 20,
+    "fields": {
+        "image": "product/img/2024/07/18/1685662738_polinka-top-p-krasivie-kartinki-prirodi-peizazhi-krasivo-21.jpg",
+        "alt": "img",
+        "product": 6
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 21,
+    "fields": {
+        "image": "product/img/2024/07/18/3264x2176_750484_www.ArtFile.ru_2oHAPEY.jpg",
+        "alt": "img",
+        "product": 6
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 22,
+    "fields": {
+        "image": "product/img/2024/07/18/2560x1600_835577_www.ArtFile.ru_6LJS6En.jpg",
+        "alt": "img",
+        "product": 6
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 23,
+    "fields": {
+        "image": "product/img/2024/07/18/ps-spring-Bank-mount-scenery-aqua-nature-reserve-tree-mountain-fu_3HZQFTi.jpg",
+        "alt": "img",
+        "product": 7
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 24,
+    "fields": {
+        "image": "product/img/2024/07/18/mountains-lake-reflection-trees-1180204_0emvvxO.jpg",
+        "alt": "img",
+        "product": 7
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 25,
+    "fields": {
+        "image": "product/img/2024/07/18/trees-landscape-forest-mountains-lake-water-n-mountain-reservoir-_2HCQxAg.jpg",
+        "alt": "img",
+        "product": 7
+    }
+},
+{
+    "model": "home_page.imgproduct",
+    "pk": 26,
+    "fields": {
+        "image": "product/img/2024/07/18/1697095396_balthazar-club-p-krasivie-mesta-prirodi-oboi-16_F9hsoqH.jpg",
+        "alt": "img",
+        "product": 7
+    }
+},
+{
+    "model": "home_page.product",
+    "pk": 2,
+    "fields": {
+        "title": "Заголовок",
+        "text": "При выборе мангала следует учитывать несколько факторов: размер, материал, наличие крышки и решётки. Также важно обратить внимание на безопасность использования мангала: он должен быть установлен на ровной поверхности и находиться на достаточном расстоянии от легковоспламеняющихся предметов.",
+        "price": "10000.00",
+        "created_at": "2024-07-18T09:34:12.952Z",
+        "available": true
+    }
+},
+{
+    "model": "home_page.product",
+    "pk": 3,
+    "fields": {
+        "title": "Заголовок",
+        "text": "При выборе мангала следует учитывать несколько факторов: размер, материал, наличие крышки и решётки. Также важно обратить внимание на безопасность использования мангала: он должен быть установлен на ровной поверхности и находиться на достаточном расстоянии от легковоспламеняющихся предметов.",
+        "price": "10000.00",
+        "created_at": "2024-07-18T09:36:50.570Z",
+        "available": true
+    }
+},
+{
+    "model": "home_page.product",
+    "pk": 4,
+    "fields": {
+        "title": "Заголовок",
+        "text": "При выборе мангала следует учитывать несколько факторов: размер, материал, наличие крышки и решётки. Также важно обратить внимание на безопасность использования мангала: он должен быть установлен на ровной поверхности и находиться на достаточном расстоянии от легковоспламеняющихся предметов.",
+        "price": "30000.00",
+        "created_at": "2024-07-18T09:40:49.498Z",
+        "available": true
+    }
+},
+{
+    "model": "home_page.product",
+    "pk": 5,
+    "fields": {
+        "title": "Заголовок",
+        "text": "При выборе мангала следует учитывать несколько факторов: размер, материал, наличие крышки и решётки. Также важно обратить внимание на безопасность использования мангала: он должен быть установлен на ровной поверхности и находиться на достаточном расстоянии от легковоспламеняющихся предметов.",
+        "price": "5000.00",
+        "created_at": "2024-07-18T09:44:19.545Z",
+        "available": true
+    }
+},
+{
+    "model": "home_page.product",
+    "pk": 6,
+    "fields": {
+        "title": "Заголовок",
+        "text": "При выборе мангала следует учитывать несколько факторов: размер, материал, наличие крышки и решётки. Также важно обратить внимание на безопасность использования мангала: он должен быть установлен на ровной поверхности и находиться на достаточном расстоянии от легковоспламеняющихся предметов.",
+        "price": "4000.00",
+        "created_at": "2024-07-18T09:46:14.085Z",
+        "available": true
+    }
+},
+{
+    "model": "home_page.product",
+    "pk": 7,
+    "fields": {
+        "title": "Заголовок",
+        "text": "При выборе мангала следует учитывать несколько факторов: размер, материал, наличие крышки и решётки. Также важно обратить внимание на безопасность использования мангала: он должен быть установлен на ровной поверхности и находиться на достаточном расстоянии от легковоспламеняющихся предметов.",
+        "price": "7000.00",
+        "created_at": "2024-07-18T09:47:51.835Z",
+        "available": true
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 3,
+    "fields": {
+        "name": "hhhhhhhhhhhhhhhhhhh",
         "email": "skolkovoinovations@gmail.com",
-        "tel": "+7 777 777 77 77",
-        "message": "ffffffffffffff",
-        "created_at": "2024-07-15T11:56:14.736Z"
+        "tel": "+7 555 555 55 55",
+        "message": "gggggggggggggggggggggg",
+        "created_at": "2024-07-18T14:16:07.329Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 4,
+    "fields": {
+        "name": "fffff",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 333 333 33 33",
+        "message": "fffffffffffffffffffffffff",
+        "created_at": "2024-07-18T14:18:20.115Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 5,
+    "fields": {
+        "name": "ввв",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 666 666 66 66",
+        "message": "сссссссссссссссс",
+        "created_at": "2024-07-18T14:20:23.399Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 6,
+    "fields": {
+        "name": "ffffffffffff",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 666 666 66 66",
+        "message": "jjjjjjjjjjj",
+        "created_at": "2024-07-18T14:22:31.265Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 7,
+    "fields": {
+        "name": "оооооооооооооооо",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 666 666 66 66",
+        "message": "оооооооооооооооооооооооо",
+        "created_at": "2024-07-18T14:25:35.077Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 8,
+    "fields": {
+        "name": "ппппппппппппп",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 555 555 55 55",
+        "message": "ппппппппппп",
+        "created_at": "2024-07-18T14:26:15.319Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 9,
+    "fields": {
+        "name": "fffffffffffffffffffffff",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 888 888 88 88",
+        "message": "bbbbbbbbbbbbbbbbb",
+        "created_at": "2024-07-18T14:28:49.823Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 10,
+    "fields": {
+        "name": "fffffffffffffffffffffff",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 333 333 33 33",
+        "message": "ffffffffffffffffffffffff",
+        "created_at": "2024-07-18T14:29:38.616Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 11,
+    "fields": {
+        "name": "bbbbbbbbbbbbbbb",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 444 444 44 44",
+        "message": "ffffffffffffffffffffffffffff",
+        "created_at": "2024-07-18T14:30:23.019Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 12,
+    "fields": {
+        "name": "ddddddddddddddddddd",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 333 333 33 33",
+        "message": "fffffffffffffffffffffffff",
+        "created_at": "2024-07-18T14:32:50.955Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 13,
+    "fields": {
+        "name": "fffffffffffffffffff",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 000 000 00 00",
+        "message": "ffffffffffffffffff",
+        "created_at": "2024-07-18T14:33:56.229Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 14,
+    "fields": {
+        "name": "kkkkkkkkkkkkkkk",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 999 999 99 99",
+        "message": "kkkkkkkkkkkkk",
+        "created_at": "2024-07-18T14:37:05.130Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 15,
+    "fields": {
+        "name": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 444 444 44 44",
+        "message": "ggggggggggggggggggg",
+        "created_at": "2024-07-18T14:40:11.963Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 16,
+    "fields": {
+        "name": "fffffffffffffffffffffffff",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 222 222 22 22",
+        "message": "ffffffffffffffffff",
+        "created_at": "2024-07-18T14:40:50.302Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 17,
+    "fields": {
+        "name": "eeeeeeeeeeee",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 111 111 11 11",
+        "message": "dddddddddddddddddd",
+        "created_at": "2024-07-18T14:43:01.125Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 18,
+    "fields": {
+        "name": "3333333333333",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 111 111 11 11",
+        "message": "ffffffffffffffffffffff",
+        "created_at": "2024-07-18T14:44:07.668Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 19,
+    "fields": {
+        "name": "dddddddddddddddddd",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 333 333 33 33",
+        "message": "gggggggggggggggggggg",
+        "created_at": "2024-07-18T14:44:53.766Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 20,
+    "fields": {
+        "name": "hhhhhhhhhhhhh",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 333 333 33 33",
+        "message": "hhhhhhhhhhhhhhh",
+        "created_at": "2024-07-18T14:46:17.631Z"
+    }
+},
+{
+    "model": "home_page.message",
+    "pk": 21,
+    "fields": {
+        "name": "eeeeeeeeeeeeeee",
+        "email": "skolkovoinovations@gmail.com",
+        "tel": "+7 111 111 11 11",
+        "message": "ddddddddddddddddd",
+        "created_at": "2024-07-18T14:47:05.684Z"
     }
 }
 ]

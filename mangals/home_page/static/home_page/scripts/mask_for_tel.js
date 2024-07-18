@@ -1,14 +1,20 @@
 document.addEventListener("DOMContentLoaded", function(){
 
+
+
         let element = document.querySelector('#exampleFormControlInput3');
         let digit_code = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] 
 
         // устранение автозаполнения из формы браузера
 
         element.addEventListener('change', function(event) {
-            setTimeout(() => {
-                element.value = '+7 '
-            }, 400)
+            let value = element.value
+            let result = value.match(/\+7 \d{3} \d{3} \d{2} \d{2}/g)
+            if (!result) {
+                setTimeout(() => {
+                    element.value = '+7 '
+                }, 300)
+            }
         })
 
         element.addEventListener('click', function(event) {
