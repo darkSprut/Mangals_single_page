@@ -5,8 +5,9 @@ LABEL maintainer="skolkovoinovations@gmail.com"
 WORKDIR /app
 
 COPY pyproject.toml ./
+COPY requirements.txt ./
 # установка poetry с отключением виртуального окружения
-RUN pip3 install poetry && poetry config virtualenvs.create false --local && poetry install --no-root
+RUN pip3 install -r requirements.txt
 
 COPY mangals .
 
